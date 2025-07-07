@@ -1,0 +1,233 @@
+:root {
+    --primary: #fd4556;
+    --background: #1e1e27;
+    --surface: #262634;
+    --text: #f4f4f7;
+    --accent: #44c6e9;
+    --shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.02em;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: var(--primary);
+}
+
+.navbar {
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    margin: 0;
+}
+.navbar a {
+    color: var(--text);
+    font-weight: 500;
+    padding: 0.3em 0.7em;
+    border-radius: 4px;
+}
+.navbar a.active, .navbar a:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.hero {
+    background: linear-gradient(120deg, #191926 70%, var(--primary) 100%);
+    text-align: center;
+    padding: 3.5rem 1rem 2rem 1rem;
+}
+.hero-logo {
+    width: 110px;
+    margin-bottom: 1rem;
+}
+.hero-content h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.7rem;
+    letter-spacing: 1.5px;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+    max-width: 950px;
+    margin: 0 auto;
+}
+.info, .modes {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 2rem;
+    min-width: 250px;
+    max-width: 400px;
+    flex: 1 1 300px;
+}
+.info h2, .modes h2 {
+    color: var(--primary);
+    margin-top: 0;
+}
+.modes ul {
+    padding-left: 1.2em;
+    margin: 0.5em 0 0 0;
+}
+footer {
+    text-align: center;
+    padding: 1.2rem 0 0.8rem 0;
+    color: #aaa;
+    font-size: 0.97em;
+    background: var(--surface);
+    margin-top: 3rem;
+}
+
+/* Agentenübersicht */
+.page-header {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.agenten-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.agent-list, .agenten-arten {
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    min-width: 250px;
+    max-width: 400px;
+    flex: 1 1 300px;
+}
+.agent-list h2, .agenten-arten h2 {
+    color: var(--primary);
+    margin-top: 0;
+}
+.agent-list ul, .arten-list {
+    list-style: disc inside;
+    padding-left: 1em;
+}
+.agenten-logo-box {
+    margin-top: 1.2em;
+    text-align: center;
+}
+.agenten-logo {
+    width: 90px;
+    border-radius: 8px;
+    background: #23233a;
+    padding: 8px;
+}
+
+.agent-profile {
+    max-width: 650px;
+    margin: 2.5rem auto 0 auto;
+    background: var(--surface);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+}
+.agent-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+.agent-image {
+    width: 120px;
+    border-radius: 12px;
+    background: #23233a;
+    border: 2px solid var(--primary);
+    padding: 5px;
+}
+.agent-header h1 {
+    margin-bottom: 0.2em;
+    color: var(--primary);
+}
+.role {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.15em 0.7em;
+    border-radius: 8px;
+    font-size: 1.06em;
+    display: inline-block;
+}
+.agent-info h2 {
+    color: var(--accent);
+    margin-top: 0;
+}
+.faehigkeiten {
+    margin: 1em 0 0 0;
+    padding-left: 1.2em;
+}
+.similar-agents {
+    margin-top: 1.4em;
+}
+.similar-agents h3 {
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+.similar-agents ul {
+    padding-left: 1.2em;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .main-section, .agenten-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+        padding: 1rem 0.4rem;
+    }
+    .agent-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+    .agent-profile {
+        padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    }
+}
